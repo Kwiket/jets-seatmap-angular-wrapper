@@ -51,11 +51,11 @@ export class AppModule { }
   [availability]="availability"
   [passengers]="passengers"
   [currentDeckIndex]="deckIndex"
-  (onSeatMapInited)="onSeatInit"
-  (onSeatSelected)="onSeatSelect"
-  (onSeatUnselected)="onSeatUnselect"
-  (onTooltipRequested)="onTooltipRequested"
-  (onLayoutUpdated)="onLayoutUpdated"
+  (onSeatMapInited)="onSeatInit($event)"
+  (onSeatSelected)="onSeatSelect($event)"
+  (onSeatUnselected)="onSeatUnselect($event)"
+  (onTooltipRequested)="onTooltipRequested($event)"
+  (onLayoutUpdated)="onLayoutUpdated($event)"
 ></seatmap>
 ```
 
