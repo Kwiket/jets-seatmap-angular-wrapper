@@ -11,9 +11,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Integration process
 
 1. Add lib dependency to `package.json` and run `npm i`
+
 ```
 "seatmap-angular-lib": "github:Kwiket/jets-seatmap-angular-wrapper"
 ```
+
 2. Import module into your `app.module.ts` and add it to `imports`
 
 ```ts
@@ -31,7 +33,7 @@ import { SeatmapAngularLibModule } from 'seatmap-angular-lib';
     ...
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })
@@ -40,16 +42,21 @@ export class AppModule { }
 
 3. See usage below
 
+## Usage
 
-## Usage 
 ```html
-    <seatmap 
-        [config]="config" 
-        [flight]="flight"
-        [availability]="availability" 
-        [passengers]="passengers"
-        (onSeatMapInited)="onSeatInit"
-        (onSeatSelected)="onSeatSelect"
-        (onSeatUnselected)="onSeatUnselect"
-    ></seatmap>
+<seatmap
+  [config]="config"
+  [flight]="flight"
+  [availability]="availability"
+  [passengers]="passengers"
+  [currentDeckIndex]="deckIndex"
+  (onSeatMapInited)="onSeatInit"
+  (onSeatSelected)="onSeatSelect"
+  (onSeatUnselected)="onSeatUnselect"
+  (onTooltipRequested)="onTooltipRequested"
+  (onLayoutUpdated)="onLayoutUpdated"
+></seatmap>
 ```
+
+For better undertanding how it works read [React lib doc](https://github.com/Kwiket/jets-seatmap-react-lib-pub) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-2/SEATMAP-INTEGRATION.md)
