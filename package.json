@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^15.2.9",
     "@angular/platform-browser-dynamic": "^15.2.9",
     "@angular/router": "^15.2.9",
-    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib#version-2",
+    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-2",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",
     "rxjs": "~7.8.1",
