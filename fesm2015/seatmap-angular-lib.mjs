@@ -18,7 +18,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImpor
         }], ctorParameters: function () { return []; } });
 
 const MyReactComponent = (props) => {
-    return (jsx("div", { children: jsx(JetsSeatMap, { flight: props.flight, config: props.config, availability: props.availability, passengers: props.passengers, currentDeckIndex: props.currentDeckIndex, onSeatMapInited: props.onSeatMapInited, onSeatSelected: props.onSeatSelected, onSeatUnselected: props.onSeatUnselected, onTooltipRequested: props.onTooltipRequested, onLayoutUpdated: props.onLayoutUpdated, onSeatMouseClick: props.onSeatMouseClick, onSeatMouseLeave: props.onSeatMouseLeave }) }));
+    return (jsx("div", { children: jsx(JetsSeatMap, { flight: props.flight, config: props.config, availability: props.availability, passengers: props.passengers, currentDeckIndex: props.currentDeckIndex, onSeatMapInited: props.onSeatMapInited, onSeatSelected: props.onSeatSelected, onSeatUnselected: props.onSeatUnselected, onTooltipRequested: props.onTooltipRequested, onLayoutUpdated: props.onLayoutUpdated, onSeatMouseLeave: props.onSeatMouseLeave, onSeatMouseClick: props.onSeatMouseClick }) }));
 };
 
 class SeatmapAngularLibComponent {
