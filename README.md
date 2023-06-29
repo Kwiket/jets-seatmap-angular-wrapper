@@ -56,6 +56,8 @@ export class AppModule { }
   (onSeatUnselected)="onSeatUnselect($event)"
   (onTooltipRequested)="onTooltipRequested($event)"
   (onLayoutUpdated)="onLayoutUpdated($event)"
+  (onSeatMouseLeave)="onSeatMouseLeave($event)"
+  (onSeatMouseClick)="onSeatMouseClick($event)"
 ></seatmap>
 ```
 

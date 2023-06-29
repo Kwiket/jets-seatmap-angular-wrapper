@@ -17,6 +17,8 @@ const MyReactComponent = (props: any) => {
         onSeatUnselected={props.onSeatUnselected}
         onTooltipRequested={props.onTooltipRequested}
         onLayoutUpdated={props.onLayoutUpdated}
+        onSeatMouseLeave={props.onSeatMouseLeave}
+        onSeatMouseClick={props.onSeatMouseClick}
       />
     </div>
   );
