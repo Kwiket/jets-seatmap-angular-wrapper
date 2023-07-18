@@ -1,6 +1,6 @@
 {
   "name": "seatmap-angular-lib",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "main": "index.d.ts",
   "scripts": {
     "ng": "ng",
@@ -24,7 +24,7 @@
     "@angular/platform-browser": "^15.2.9",
     "@angular/platform-browser-dynamic": "^15.2.9",
     "@angular/router": "^15.2.9",
-    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-2",
+    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#feature/cache-seatmap-data-test",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",
     "rxjs": "~7.8.1",
