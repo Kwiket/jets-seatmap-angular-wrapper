@@ -38,11 +38,7 @@ class SeatmapAngularLibComponent {
         this.rootId = 'rootId';
         this.rootReact = null;
     }
-    ngOnInit() {
-        console.log('ngOnInit');
-    }
     ngAfterViewInit() {
-        console.log('ngAfterViewInit');
         const root_elem = document.getElementById(this.rootId);
         if (root_elem && !this.rootReact) {
             this.rootReact = ReactDOM.createRoot(root_elem);
@@ -50,7 +46,6 @@ class SeatmapAngularLibComponent {
         this.render();
     }
     ngOnChanges(changes) {
-        console.log('ngOnChanges');
         this.render();
     }
     ngOnDestroy() { }
