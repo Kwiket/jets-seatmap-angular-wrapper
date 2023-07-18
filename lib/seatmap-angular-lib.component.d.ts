@@ -14,6 +14,7 @@ export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewI
     onSeatMouseLeave: EventEmitter<any>;
     onSeatMouseClick: EventEmitter<any>;
     rootId: string;
+    rootReact: any;
     ngOnChanges(changes: SimpleChanges): void;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;
