@@ -32,12 +32,17 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Output() onSeatMouseClick = new EventEmitter<any>();
 
   public rootId = 'rootId';
+  public rootReact: any = null;
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngAfterViewInit() {
+    const root_elem = document.getElementById(this.rootId);
+    if (root_elem && !this.rootReact) {
+      this.rootReact = ReactDOM.createRoot(root_elem);
+    }
     this.render();
   }
 
-  ngAfterViewInit() {
+  ngOnChanges(changes: SimpleChanges) {
     this.render();
   }
 
@@ -72,10 +77,9 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
         this.onSeatMouseClick.emit(data);
       },
     };
-    const root_elem = document.getElementById(this.rootId);
-    if (root_elem) {
-      const rootReact = ReactDOM.createRoot(root_elem);
-      rootReact.render(React.createElement(MyReactComponent, reactProps));
+
+    if (this.rootReact) {
+      this.rootReact.render(React.createElement(MyReactComponent, reactProps));
     }
   }
 }
