@@ -38,14 +38,19 @@ class SeatmapAngularLibComponent {
         this.rootId = 'rootId';
         this.rootReact = null;
     }
-    ngOnChanges(changes) {
-        this.render();
+    ngOnInit() {
+        console.log('ngOnInit');
     }
     ngAfterViewInit() {
+        console.log('ngAfterViewInit');
         const root_elem = document.getElementById(this.rootId);
         if (root_elem && !this.rootReact) {
             this.rootReact = ReactDOM.createRoot(root_elem);
         }
+        this.render();
+    }
+    ngOnChanges(changes) {
+        console.log('ngOnChanges');
         this.render();
     }
     ngOnDestroy() { }
@@ -78,7 +83,9 @@ class SeatmapAngularLibComponent {
                 this.onSeatMouseClick.emit(data);
             },
         };
-        this.rootReact.render(React.createElement(MyReactComponent, reactProps));
+        if (this.rootReact) {
+            this.rootReact.render(React.createElement(MyReactComponent, reactProps));
+        }
     }
 }
 SeatmapAngularLibComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: SeatmapAngularLibComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });

@@ -1,6 +1,6 @@
-import { AfterViewInit, EventEmitter, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { AfterViewInit, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as i0 from "@angular/core";
-export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy {
+export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy, OnInit {
     flight: {};
     config: {};
     availability: any[];
@@ -15,8 +15,9 @@ export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewI
     onSeatMouseClick: EventEmitter<any>;
     rootId: string;
     rootReact: any;
-    ngOnChanges(changes: SimpleChanges): void;
+    ngOnInit(): void;
     ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private render;
     static ɵfac: i0.ɵɵFactoryDeclaration<SeatmapAngularLibComponent, never>;

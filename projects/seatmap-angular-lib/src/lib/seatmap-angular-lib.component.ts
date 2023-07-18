@@ -18,7 +18,7 @@ import MyReactComponent from './MyReactComponent';
   selector: 'seatmap',
   template: '<div [id]="rootId"></div>',
 })
-export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy {
+export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy, OnInit {
   @Input() flight = {};
   @Input() config = {};
   @Input() availability: any[] = [];
@@ -35,15 +35,23 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   public rootId = 'rootId';
   public rootReact: any = null;
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.render();
+  ngOnInit(): void {
+    console.log('ngOnInit');
   }
 
   ngAfterViewInit() {
+    console.log('ngAfterViewInit');
+
     const root_elem = document.getElementById(this.rootId);
     if (root_elem && !this.rootReact) {
       this.rootReact = ReactDOM.createRoot(root_elem);
     }
+    this.render();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges');
+
     this.render();
   }
 
@@ -79,6 +87,8 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
       },
     };
 
-    this.rootReact.render(React.createElement(MyReactComponent, reactProps));
+    if (this.rootReact) {
+      this.rootReact.render(React.createElement(MyReactComponent, reactProps));
+    }
   }
 }
