@@ -1,6 +1,6 @@
 {
   "name": "seatmap-angular-lib",
-  "version": "0.1.50",
+  "version": "0.1.55",
   "main": "index.d.ts",
   "scripts": {
     "ng": "ng",

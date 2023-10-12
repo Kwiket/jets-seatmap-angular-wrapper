@@ -18,6 +18,7 @@ import MyReactComponent from './MyReactComponent';
   template: '<div [id]="rootId"></div>',
 })
 export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy {
+  @Input() rootId = 'rootId';
   @Input() flight = {};
   @Input() config = {};
   @Input() availability: any[] = [];
@@ -31,7 +32,6 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Output() onSeatMouseLeave = new EventEmitter<any>();
   @Output() onSeatMouseClick = new EventEmitter<any>();
 
-  public rootId = 'rootId';
   public rootReact: any = null;
 
   ngAfterViewInit() {

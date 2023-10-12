@@ -23,6 +23,7 @@ const MyReactComponent = (props) => {
 
 class SeatmapAngularLibComponent {
     constructor() {
+        this.rootId = 'rootId';
         this.flight = {};
         this.config = {};
         this.availability = [];
@@ -35,7 +36,6 @@ class SeatmapAngularLibComponent {
         this.onLayoutUpdated = new EventEmitter();
         this.onSeatMouseLeave = new EventEmitter();
         this.onSeatMouseClick = new EventEmitter();
-        this.rootId = 'rootId';
         this.rootReact = null;
     }
     ngAfterViewInit() {
@@ -84,14 +84,16 @@ class SeatmapAngularLibComponent {
     }
 }
 SeatmapAngularLibComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: SeatmapAngularLibComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeatmapAngularLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: SeatmapAngularLibComponent, selector: "seatmap", inputs: { flight: "flight", config: "config", availability: "availability", passengers: "passengers", currentDeckIndex: "currentDeckIndex" }, outputs: { onSeatMapInited: "onSeatMapInited", onSeatSelected: "onSeatSelected", onSeatUnselected: "onSeatUnselected", onTooltipRequested: "onTooltipRequested", onLayoutUpdated: "onLayoutUpdated", onSeatMouseLeave: "onSeatMouseLeave", onSeatMouseClick: "onSeatMouseClick" }, usesOnChanges: true, ngImport: i0, template: '<div [id]="rootId"></div>', isInline: true });
+SeatmapAngularLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: SeatmapAngularLibComponent, selector: "seatmap", inputs: { rootId: "rootId", flight: "flight", config: "config", availability: "availability", passengers: "passengers", currentDeckIndex: "currentDeckIndex" }, outputs: { onSeatMapInited: "onSeatMapInited", onSeatSelected: "onSeatSelected", onSeatUnselected: "onSeatUnselected", onTooltipRequested: "onTooltipRequested", onLayoutUpdated: "onLayoutUpdated", onSeatMouseLeave: "onSeatMouseLeave", onSeatMouseClick: "onSeatMouseClick" }, usesOnChanges: true, ngImport: i0, template: '<div [id]="rootId"></div>', isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: SeatmapAngularLibComponent, decorators: [{
             type: Component,
             args: [{
                     selector: 'seatmap',
                     template: '<div [id]="rootId"></div>',
                 }]
-        }], propDecorators: { flight: [{
+        }], propDecorators: { rootId: [{
+                type: Input
+            }], flight: [{
                 type: Input
             }], config: [{
                 type: Input

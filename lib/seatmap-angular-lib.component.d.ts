@@ -1,6 +1,7 @@
 import { AfterViewInit, EventEmitter, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import * as i0 from "@angular/core";
 export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnDestroy {
+    rootId: string;
     flight: {};
     config: {};
     availability: any[];
@@ -13,12 +14,11 @@ export declare class SeatmapAngularLibComponent implements OnChanges, AfterViewI
     onLayoutUpdated: EventEmitter<any>;
     onSeatMouseLeave: EventEmitter<any>;
     onSeatMouseClick: EventEmitter<any>;
-    rootId: string;
     rootReact: any;
     ngAfterViewInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
     ngOnDestroy(): void;
     private render;
     static ɵfac: i0.ɵɵFactoryDeclaration<SeatmapAngularLibComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<SeatmapAngularLibComponent, "seatmap", never, { "flight": "flight"; "config": "config"; "availability": "availability"; "passengers": "passengers"; "currentDeckIndex": "currentDeckIndex"; }, { "onSeatMapInited": "onSeatMapInited"; "onSeatSelected": "onSeatSelected"; "onSeatUnselected": "onSeatUnselected"; "onTooltipRequested": "onTooltipRequested"; "onLayoutUpdated": "onLayoutUpdated"; "onSeatMouseLeave": "onSeatMouseLeave"; "onSeatMouseClick": "onSeatMouseClick"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<SeatmapAngularLibComponent, "seatmap", never, { "rootId": "rootId"; "flight": "flight"; "config": "config"; "availability": "availability"; "passengers": "passengers"; "currentDeckIndex": "currentDeckIndex"; }, { "onSeatMapInited": "onSeatMapInited"; "onSeatSelected": "onSeatSelected"; "onSeatUnselected": "onSeatUnselected"; "onTooltipRequested": "onTooltipRequested"; "onLayoutUpdated": "onLayoutUpdated"; "onSeatMouseLeave": "onSeatMouseLeave"; "onSeatMouseClick": "onSeatMouseClick"; }, never, never, false, never>;
 }
