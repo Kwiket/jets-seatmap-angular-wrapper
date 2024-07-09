@@ -1,6 +1,6 @@
 {
   "name": "jets-seatmap-angular-wrapper",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-2",
+    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-3",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",
     "rxjs": "~6.6.0",
