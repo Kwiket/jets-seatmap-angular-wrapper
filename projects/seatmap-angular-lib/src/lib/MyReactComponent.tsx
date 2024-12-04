@@ -11,6 +11,7 @@ const MyReactComponent = (props: any) => {
         config={props.config}
         availability={props.availability}
         passengers={props.passengers}
+        seatJumpTo={props.seatJumpTo}
         currentDeckIndex={props.currentDeckIndex}
         onSeatMapInited={props.onSeatMapInited}
         onSeatSelected={props.onSeatSelected}

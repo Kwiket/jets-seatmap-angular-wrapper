@@ -23,6 +23,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Input() config = {};
   @Input() availability: any[] = [];
   @Input() passengers: any[] = [];
+  @Input() seatJumpTo: any = null;
   @Input() currentDeckIndex: number = 0;
   @Output() onSeatMapInited = new EventEmitter<any>();
   @Output() onSeatSelected = new EventEmitter<any>();
@@ -56,6 +57,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
       currentDeckIndex: this.currentDeckIndex,
       availability: this.availability,
       passengers: this.passengers,
+      seatJumpTo: this.seatJumpTo,
       onSeatMapInited: (data: any) => {
         this.onSeatMapInited.emit(data);
       },
