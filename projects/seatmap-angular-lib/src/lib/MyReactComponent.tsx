@@ -19,6 +19,7 @@ const MyReactComponent = (props: any) => {
         onLayoutUpdated={props.onLayoutUpdated}
         onSeatMouseLeave={props.onSeatMouseLeave}
         onSeatMouseClick={props.onSeatMouseClick}
+        onAvailabilityApplied={props.onAvailabilityApplied}
       />
     </div>
   );

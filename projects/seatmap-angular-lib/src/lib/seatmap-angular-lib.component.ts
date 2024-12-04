@@ -31,6 +31,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Output() onLayoutUpdated = new EventEmitter<any>();
   @Output() onSeatMouseLeave = new EventEmitter<any>();
   @Output() onSeatMouseClick = new EventEmitter<any>();
+  @Output() onAvailabilityApplied = new EventEmitter<any>();
 
   public rootReact: any = null;
 
@@ -75,6 +76,9 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
       },
       onSeatMouseClick: (data: any) => {
         this.onSeatMouseClick.emit(data);
+      },
+      onAvailabilityApplied: (data: any) => {
+        this.onAvailabilityApplied.emit(data);
       },
     };
 

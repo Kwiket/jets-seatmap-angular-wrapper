@@ -58,6 +58,7 @@ export class AppModule { }
   (onLayoutUpdated)="onLayoutUpdated($event)"
   (onSeatMouseLeave)="onSeatMouseLeave($event)"
   (onSeatMouseClick)="onSeatMouseClick($event)"
+  (onAvailabilityApplied)="onAvailabilityApplied($event)"
 ></seatmap>
 ```
 
