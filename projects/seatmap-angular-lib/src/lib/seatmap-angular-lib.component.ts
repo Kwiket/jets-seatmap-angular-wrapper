@@ -23,7 +23,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Input() config = {};
   @Input() availability: any[] = [];
   @Input() passengers: any[] = [];
-  @Input() seatJumpTo: any = null;
+  @Input() seatJumpTo: any = {};
   @Input() currentDeckIndex: number = 0;
   @Output() onSeatMapInited = new EventEmitter<any>();
   @Output() onSeatSelected = new EventEmitter<any>();
@@ -37,6 +37,12 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   public rootReact: any = null;
 
   ngAfterViewInit() {
+    console.log('======== [SEATMAP ANGULAR LIB] ngAfterViewInit ===========', {
+      flight: this.flight,
+      passengers: this.passengers,
+      availability: this.availability,
+      seatJumpTo: this.seatJumpTo,
+    });
     const root_elem = document.getElementById(this.rootId);
     if (root_elem && !this.rootReact) {
       this.rootReact = ReactDOM.createRoot(root_elem);
@@ -45,6 +51,12 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log('======== [SEATMAP ANGULAR LIB] ngOnChanges ===========', {
+      flight: this.flight,
+      passengers: this.passengers,
+      availability: this.availability,
+      seatJumpTo: this.seatJumpTo,
+    });
     this.render();
   }
 
@@ -83,6 +95,8 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
         this.onAvailabilityApplied.emit(data);
       },
     };
+
+    console.log('======== [SEATMAP ANGULAR LIB] render ===========', reactProps);
 
     if (this.rootReact) {
       this.rootReact.render(React.createElement(MyReactComponent, reactProps));
