@@ -28,7 +28,7 @@ class SeatmapAngularLibComponent {
         this.config = {};
         this.availability = [];
         this.passengers = [];
-        this.seatJumpTo = null;
+        this.seatJumpTo = {};
         this.currentDeckIndex = 0;
         this.onSeatMapInited = new EventEmitter();
         this.onSeatSelected = new EventEmitter();
@@ -41,6 +41,12 @@ class SeatmapAngularLibComponent {
         this.rootReact = null;
     }
     ngAfterViewInit() {
+        console.log('======== [SEATMAP ANGULAR LIB] ngAfterViewInit ===========', {
+            flight: this.flight,
+            passengers: this.passengers,
+            availability: this.availability,
+            seatJumpTo: this.seatJumpTo,
+        });
         const root_elem = document.getElementById(this.rootId);
         if (root_elem && !this.rootReact) {
             this.rootReact = ReactDOM.createRoot(root_elem);
@@ -48,6 +54,12 @@ class SeatmapAngularLibComponent {
         this.render();
     }
     ngOnChanges(changes) {
+        console.log('======== [SEATMAP ANGULAR LIB] ngOnChanges ===========', {
+            flight: this.flight,
+            passengers: this.passengers,
+            availability: this.availability,
+            seatJumpTo: this.seatJumpTo,
+        });
         this.render();
     }
     ngOnDestroy() { }
@@ -84,6 +96,7 @@ class SeatmapAngularLibComponent {
                 this.onAvailabilityApplied.emit(data);
             },
         };
+        console.log('======== [SEATMAP ANGULAR LIB] render ===========', reactProps);
         if (this.rootReact) {
             this.rootReact.render(React.createElement(MyReactComponent, reactProps));
         }
