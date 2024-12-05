@@ -50,6 +50,7 @@ export class AppModule { }
   [flight]="flight"
   [availability]="availability"
   [passengers]="passengers"
+  [seatJumpTo]="seatJumpTo"
   [currentDeckIndex]="deckIndex"
   (onSeatMapInited)="onSeatInit($event)"
   (onSeatSelected)="onSeatSelect($event)"
@@ -58,6 +59,7 @@ export class AppModule { }
   (onLayoutUpdated)="onLayoutUpdated($event)"
   (onSeatMouseLeave)="onSeatMouseLeave($event)"
   (onSeatMouseClick)="onSeatMouseClick($event)"
+  (onAvailabilityApplied)="onAvailabilityApplied($event)"
 ></seatmap>
 ```
 

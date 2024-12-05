@@ -18,7 +18,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImpor
         }], ctorParameters: function () { return []; } });
 
 const MyReactComponent = (props) => {
-    return (jsx("div", { children: jsx(JetsSeatMap, { flight: props.flight, config: props.config, availability: props.availability, passengers: props.passengers, currentDeckIndex: props.currentDeckIndex, onSeatMapInited: props.onSeatMapInited, onSeatSelected: props.onSeatSelected, onSeatUnselected: props.onSeatUnselected, onTooltipRequested: props.onTooltipRequested, onLayoutUpdated: props.onLayoutUpdated, onSeatMouseLeave: props.onSeatMouseLeave, onSeatMouseClick: props.onSeatMouseClick }) }));
+    return (jsx("div", { children: jsx(JetsSeatMap, { flight: props.flight, config: props.config, availability: props.availability, passengers: props.passengers, seatJumpTo: props.seatJumpTo, currentDeckIndex: props.currentDeckIndex, onSeatMapInited: props.onSeatMapInited, onSeatSelected: props.onSeatSelected, onSeatUnselected: props.onSeatUnselected, onTooltipRequested: props.onTooltipRequested, onLayoutUpdated: props.onLayoutUpdated, onSeatMouseLeave: props.onSeatMouseLeave, onSeatMouseClick: props.onSeatMouseClick, onAvailabilityApplied: props.onAvailabilityApplied }) }));
 };
 
 class SeatmapAngularLibComponent {
@@ -28,6 +28,7 @@ class SeatmapAngularLibComponent {
         this.config = {};
         this.availability = [];
         this.passengers = [];
+        this.seatJumpTo = {};
         this.currentDeckIndex = 0;
         this.onSeatMapInited = new EventEmitter();
         this.onSeatSelected = new EventEmitter();
@@ -36,6 +37,7 @@ class SeatmapAngularLibComponent {
         this.onLayoutUpdated = new EventEmitter();
         this.onSeatMouseLeave = new EventEmitter();
         this.onSeatMouseClick = new EventEmitter();
+        this.onAvailabilityApplied = new EventEmitter();
         this.rootReact = null;
     }
     ngAfterViewInit() {
@@ -56,6 +58,7 @@ class SeatmapAngularLibComponent {
             currentDeckIndex: this.currentDeckIndex,
             availability: this.availability,
             passengers: this.passengers,
+            seatJumpTo: this.seatJumpTo,
             onSeatMapInited: (data) => {
                 this.onSeatMapInited.emit(data);
             },
@@ -77,6 +80,9 @@ class SeatmapAngularLibComponent {
             onSeatMouseClick: (data) => {
                 this.onSeatMouseClick.emit(data);
             },
+            onAvailabilityApplied: (data) => {
+                this.onAvailabilityApplied.emit(data);
+            },
         };
         if (this.rootReact) {
             this.rootReact.render(React.createElement(MyReactComponent, reactProps));
@@ -84,7 +90,7 @@ class SeatmapAngularLibComponent {
     }
 }
 SeatmapAngularLibComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: SeatmapAngularLibComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-SeatmapAngularLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: SeatmapAngularLibComponent, selector: "seatmap", inputs: { rootId: "rootId", flight: "flight", config: "config", availability: "availability", passengers: "passengers", currentDeckIndex: "currentDeckIndex" }, outputs: { onSeatMapInited: "onSeatMapInited", onSeatSelected: "onSeatSelected", onSeatUnselected: "onSeatUnselected", onTooltipRequested: "onTooltipRequested", onLayoutUpdated: "onLayoutUpdated", onSeatMouseLeave: "onSeatMouseLeave", onSeatMouseClick: "onSeatMouseClick" }, usesOnChanges: true, ngImport: i0, template: '<div [id]="rootId"></div>', isInline: true });
+SeatmapAngularLibComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.9", type: SeatmapAngularLibComponent, selector: "seatmap", inputs: { rootId: "rootId", flight: "flight", config: "config", availability: "availability", passengers: "passengers", seatJumpTo: "seatJumpTo", currentDeckIndex: "currentDeckIndex" }, outputs: { onSeatMapInited: "onSeatMapInited", onSeatSelected: "onSeatSelected", onSeatUnselected: "onSeatUnselected", onTooltipRequested: "onTooltipRequested", onLayoutUpdated: "onLayoutUpdated", onSeatMouseLeave: "onSeatMouseLeave", onSeatMouseClick: "onSeatMouseClick", onAvailabilityApplied: "onAvailabilityApplied" }, usesOnChanges: true, ngImport: i0, template: '<div [id]="rootId"></div>', isInline: true });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: SeatmapAngularLibComponent, decorators: [{
             type: Component,
             args: [{
@@ -101,6 +107,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImpor
                 type: Input
             }], passengers: [{
                 type: Input
+            }], seatJumpTo: [{
+                type: Input
             }], currentDeckIndex: [{
                 type: Input
             }], onSeatMapInited: [{
@@ -116,6 +124,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.9", ngImpor
             }], onSeatMouseLeave: [{
                 type: Output
             }], onSeatMouseClick: [{
+                type: Output
+            }], onAvailabilityApplied: [{
                 type: Output
             }] } });
 

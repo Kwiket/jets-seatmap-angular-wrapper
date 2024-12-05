@@ -11,6 +11,7 @@ const MyReactComponent = (props: any) => {
         config={props.config}
         availability={props.availability}
         passengers={props.passengers}
+        seatJumpTo={props.seatJumpTo}
         currentDeckIndex={props.currentDeckIndex}
         onSeatMapInited={props.onSeatMapInited}
         onSeatSelected={props.onSeatSelected}
@@ -19,6 +20,7 @@ const MyReactComponent = (props: any) => {
         onLayoutUpdated={props.onLayoutUpdated}
         onSeatMouseLeave={props.onSeatMouseLeave}
         onSeatMouseClick={props.onSeatMouseClick}
+        onAvailabilityApplied={props.onAvailabilityApplied}
       />
     </div>
   );

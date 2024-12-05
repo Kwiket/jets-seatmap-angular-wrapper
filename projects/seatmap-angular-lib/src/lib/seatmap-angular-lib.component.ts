@@ -23,6 +23,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Input() config = {};
   @Input() availability: any[] = [];
   @Input() passengers: any[] = [];
+  @Input() seatJumpTo: any = {};
   @Input() currentDeckIndex: number = 0;
   @Output() onSeatMapInited = new EventEmitter<any>();
   @Output() onSeatSelected = new EventEmitter<any>();
@@ -31,6 +32,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
   @Output() onLayoutUpdated = new EventEmitter<any>();
   @Output() onSeatMouseLeave = new EventEmitter<any>();
   @Output() onSeatMouseClick = new EventEmitter<any>();
+  @Output() onAvailabilityApplied = new EventEmitter<any>();
 
   public rootReact: any = null;
 
@@ -55,6 +57,7 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
       currentDeckIndex: this.currentDeckIndex,
       availability: this.availability,
       passengers: this.passengers,
+      seatJumpTo: this.seatJumpTo,
       onSeatMapInited: (data: any) => {
         this.onSeatMapInited.emit(data);
       },
@@ -75,6 +78,9 @@ export class SeatmapAngularLibComponent implements OnChanges, AfterViewInit, OnD
       },
       onSeatMouseClick: (data: any) => {
         this.onSeatMouseClick.emit(data);
+      },
+      onAvailabilityApplied: (data: any) => {
+        this.onAvailabilityApplied.emit(data);
       },
     };
 
