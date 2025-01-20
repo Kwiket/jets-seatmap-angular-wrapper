@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // @ts-ignore
-import { JetsSeatMap } from 'jets-seatmap-react-lib';
+import { JetsSeatMap } from '@seatmaps.com/react-lib';
 
 const MyReactComponent = (props: any) => {
   return (

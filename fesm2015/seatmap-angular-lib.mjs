@@ -3,7 +3,7 @@ import { Injectable, EventEmitter, Component, Input, Output, NgModule } from '@a
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { jsx } from 'react/jsx-runtime';
-import { JetsSeatMap } from 'jets-seatmap-react-lib';
+import { JetsSeatMap } from '@seatmaps.com/react-lib';
 
 class SeatmapAngularLibService {
     constructor() { }
