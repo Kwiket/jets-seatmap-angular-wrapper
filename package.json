@@ -1,6 +1,6 @@
 {
   "name": "@seatmaps.com/react-lib-angular-wrapper",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Jets seat map React library wrapper.",
   "main": "index.d.ts",
   "scripts": {
