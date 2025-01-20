@@ -1,6 +1,7 @@
 {
-  "name": "seatmap-angular-lib",
-  "version": "0.2.2",
+  "name": "@seatmaps.com/react-lib-angular-wrapper",
+  "version": "3.0.4",
+  "description": "Jets seat map React library wrapper.",
   "main": "index.d.ts",
   "scripts": {
     "ng": "ng",
@@ -10,11 +11,33 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IhorShalimov/seatmap-angular-lib.git"
+    "url": "git+https://github.com/Kwiket/jets-seatmap-angular-wrapper.git"
   },
+  "author": "kwiket",
+  "license": "Apache-2.0",
+  "files": [
+    "esm2020",
+    "fesm2015",
+    "fesm2020",
+    "lib",
+    "index.d.ts",
+    "public-api.d.ts",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "keywords": [
+    "angular",
+    "seatmap",
+    "seat map",
+    "seatmaps.com",
+    "jets",
+    "aircraft",
+    "plane",
+    "quicket",
+    "library"
+  ],
   "dependencies": {
     "@angular/animations": "^15.2.9",
     "@angular/common": "^15.2.0",
@@ -24,7 +47,7 @@
     "@angular/platform-browser": "^15.2.9",
     "@angular/platform-browser-dynamic": "^15.2.9",
     "@angular/router": "^15.2.9",
-    "jets-seatmap-react-lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-3",
+    "@seatmaps.com/react-lib": "^3.0.50",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",
     "rxjs": "~7.8.1",

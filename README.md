@@ -10,16 +10,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Integration process
 
-1. Add lib dependency to `package.json` and run `npm i`
-
-```
-"seatmap-angular-lib": "github:Kwiket/jets-seatmap-angular-wrapper"
-```
+1. Run `npm i @seatmaps.com/react-lib-angular-wrapper`
 
 2. Import module into your `app.module.ts` and add it to `imports`
 
 ```ts
-import { SeatmapAngularLibModule } from 'seatmap-angular-lib';
+import { SeatmapAngularLibModule } from '@seatmaps.com/react-lib-angular-wrapper';
 ...
 
 @NgModule({
@@ -63,4 +59,4 @@ export class AppModule { }
 ></seatmap>
 ```
 
-For better undertanding how it works read [React lib doc](https://github.com/Kwiket/jets-seatmap-react-lib-pub) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-3/SEATMAP-INTEGRATION.md)
+For better understanding how it works read [React lib doc](https://www.npmjs.com/package/@seatmaps.com/react-lib) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-3/README.md)
